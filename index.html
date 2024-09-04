@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <title>Reserved Park</title>
+</head>
+
+<body>
+  <div class="navigation">
+    <div class="sidebar">
+    </div>
+    <div class="user-profile">
+      <img src="/image/user.webp" alt="Foto do usuário">
+      <h4>Usuário</h4>
+    </div>
+    <ul>
+    </ul>
+    <ul>
+      <li class="list active">
+        <a id="home" href="#" onclick="mostrarDiv('div1')">
+          <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+          <span class="title">Inicio</span>
+        </a>
+      </li>
+      <li class="list">
+        <a id="user" href="#" onclick="mostrarDiv('div2')">
+          <span class="icon"><ion-icon name="car"></ion-icon></span>
+          <span class="title">Vagas</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#" onclick="mostrarDiv('div3')">
+          <span class="icon"><i class='bx bx-user-check'></i></span>
+          <span class="title">Reservas</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#" onclick="mostrarDiv('div4')">
+          <span class="icon"><i class='bx bx-coin-stack'></i></span>
+          <span class="title">Pagamentos</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#" onclick="mostrarDiv('div5')">
+          <span class="icon"><i class='bx bx-note'></i></span>
+          <span class="title">Relatórios</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#" onclick="mostrarDiv('div6')">
+          <span class="icon"><i class='bx bx-cog'></i></span>
+          <span class="title">Configurações</span>
+        </a>
+      </li>
+      <li class="list">
+        <a href="#" onclick="mostrarAlerta()">
+          <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+          <span class="title">Sair</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  </div>
+
+
+  <div id="container_dashboard"></div> <!-----Dashboard----->
+  <div id="container_vagas"></div> <!------Vagas------>
+  <div id="container_reservas"></div> <!-----Reservas----->
+  <div id="container_pagamentos"></div> <!-----Pagamentos----->
+  <div id="container_relatorios"></div> <!-----Relatórios----->
+  <div id="container_configuracao"></div> <!-----Configurações----->
+
+
+  <div id="alerta" style="display: none;">
+    <p>Você tem certeza que deseja sair?</p> <br>
+    <button onclick="confirmado()">Sim</button>
+    <button id="botao2" onclick="cancelado()">Não</button>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script>
+    const list = document.querySelectorAll('.list');
+    function activeLink() {
+      list.forEach((item) =>
+        item.classList.remove('active'));
+      this.classList.add('active');
+    }
+    list.forEach((item) =>
+      item.addEventListener('click', activeLink));
+  </script>
+
+  <script defer src="/js/script.js"></script>
+</body>
+
+</html>
